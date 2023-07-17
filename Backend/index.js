@@ -4,13 +4,13 @@ const app = express(); //initialize express
 const port = 5000;
 
 const userRouter = require('./routers/userRouters');
-const laptopRouter = require('./routers/laptopRouters');
+const locationRouter = require('./routers/locationRouter');
 
 app.use(express.json(  ));
 // middleware
 
 app.use('/user', userRouter);
-app.use('/user', laptopRouter);
+app.use('/location', locationRouter);
 
 // to accept request from client
 // routing
