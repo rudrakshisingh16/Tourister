@@ -5,7 +5,7 @@ const myschema = new Schema({
     title : String,
     image : String,
     description: String,
-
+    
 })
 
  module.exports = model('location',myschema);
