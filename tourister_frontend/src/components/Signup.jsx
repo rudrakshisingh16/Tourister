@@ -1,4 +1,4 @@
- import { useFormik } from "formik";
+import { useFormik } from "formik";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import * as Yup from 'yup';
@@ -12,7 +12,6 @@ const signupSchema = Yup.object().shape({
 const Signup = () => {
 
   const navigate=useNavigate();
-  
   const signupForm = useFormik({
     initialValues: {
       name: "",

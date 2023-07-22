@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require('cors');
 
 const app = express(); //initialize express
 const port = 5000;
@@ -6,7 +7,8 @@ const port = 5000;
 const userRouter = require('./routers/userRouters');
 const locationRouter = require('./routers/locationRouter');
 
-app.use(express.json(  ));
+app.use(cors());
+app.use(express.json());
 // middleware
 
 app.use('/user', userRouter);

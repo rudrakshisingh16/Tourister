@@ -71,7 +71,7 @@ router.get("/authenticate", (req,res)=> {
     if(result !== null){
         
     }
-        res.json(result);
+      res.json(result);
     })
     .catch((err) => {
      res.status(500).json(err);

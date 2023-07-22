@@ -5,7 +5,7 @@ const Navbar =( ) => {
  return(
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
     <div className="container-fluid">
-      <a className="navbar-brand" href="#">
+      <a className="navbar-brand " href="#">
         Tourister
       </a>
       <button
@@ -27,19 +27,31 @@ const Navbar =( ) => {
               Home
             </NavLink>
           </li>
+
           <li className="nav-item">
             <NavLink className="nav-link" to="/login">
               Login page
             </NavLink>
-
           </li>
 
           <li className="nav-item">
             <NavLink className="nav-link" to="/singup">
               SignUp page
             </NavLink>
-
           </li>
+
+          <li className="nav-item">
+            <NavLink className="nav-link" to="/addlocation">
+              AddLocation
+            </NavLink>
+          </li>
+
+          <li className="nav-item">
+            <NavLink className="nav-link" to="/aboutus">
+              AboutUs
+            </NavLink>
+          </li>
+
 
       
         </ul>

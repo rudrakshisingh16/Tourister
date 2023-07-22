@@ -3,7 +3,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import * as Yup from 'yup';
 import Swal from 'sweetalert2';
-
+import placesData from "./placesData";
 
 const AddLocation = () => {
 
@@ -14,6 +14,7 @@ const AddLocation = () => {
         title : "",
         image : "",
         description: "",
+        place: ""
     },
 
     onSubmit: async (values) => {
@@ -30,10 +31,9 @@ const AddLocation = () => {
       if(res.status === 200){
         Swal.fire({
           icon : 'success',
-          title : 'Signup Success',
-          text : 'login to continue'
+          title : 'Success',
+          text : 'Location Added Successfully'
         });
-        navigate('/login');
       }else{
         Swal.fire({
           icon : 'error',
@@ -42,9 +42,7 @@ const AddLocation = () => {
         })
       }
       // add code here to connect to backend
-    },
-
-    validationSchema: signupSchema
+    }
   });
 
   return (
@@ -55,17 +53,27 @@ const AddLocation = () => {
             <h2 className="my-5 text-center">Signup Form</h2>
 
             <form onSubmit={signupForm.handleSubmit}>
-              <label htmlFor="">Name</label>
-              <span style={{color: 'red', fontSize: 15, marginLeft: 10}}>{signupForm.touched.name && signupForm.errors.name}</span>
-              <input className="form-control mb-3" onChange={signupForm.handleChange} value={signupForm.values.name} name="name" />
-              
-              <label htmlFor="">Email</label>
-              <span style={{color: 'red', fontSize: 15, marginLeft: 10}}>{signupForm.touched.email && signupForm.errors.email}</span>
-              <input className="form-control mb-3" onChange={signupForm.handleChange} value={signupForm.values.email} name="email" />
 
-              <label htmlFor="">Password</label>
+              <label>Select Place</label>
+              <select className="form-control" onChange={signupForm.handleChange} id="place" value={signupForm.values.place} >
+                {
+                  placesData.map(place => (
+                    <option value={place.name}>{place.name}</option>
+                  ))
+                }
+              </select>
+
+              <label htmlFor="">Title</label>
+              <span style={{color: 'red', fontSize: 15, marginLeft: 10}}>{signupForm.touched.name && signupForm.errors.name}</span>
+              <input className="form-control mb-3" onChange={signupForm.handleChange} value={signupForm.values.title} name="title" />
+              
+              <label htmlFor="">Description</label>
+              <span style={{color: 'red', fontSize: 15, marginLeft: 10}}>{signupForm.touched.email && signupForm.errors.email}</span>
+              <textarea className="form-control mb-3" onChange={signupForm.handleChange} value={signupForm.values.description} name="description" ></textarea>
+
+              <label htmlFor="">Upload Image</label>
               <span style={{color: 'red', fontSize: 15, marginLeft: 10}}>{signupForm.touched.password && signupForm.errors.password}</span>
-              <input className="form-control mb-3" type="password" onChange={signupForm.handleChange} value={signupForm.values.password} name="password" />
+              <input className="form-control mb-3" type="file" />
 
               <button type="submit" className="btn btn-primary mt-4">Login</button>
             </form>
