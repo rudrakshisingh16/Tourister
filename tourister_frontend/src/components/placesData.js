@@ -1,19 +1,19 @@
 const placesData = [
     {
         name: 'Nainital',
-        cover:'https://static.toiimg.com/img/92198781/Master.jpg',
+        cover:'https://viewuttarakhand.com/wp-content/uploads/Nainital-min.jpg',
         description: '',
         address: '' 
     },
     {
         name: 'Goa',
-        cover:'https://assets.cntraveller.in/photos/61b2f6ebe15d3d4c8dcafb74/4:3/w_1440,h_1080,c_limit/Still%20Available%20Hotels%20in%20goa%20Lead.jpg',
+        cover:'https://s7d1.scene7.com/is/image/marriotts7prod/xr-goixr-beach-resort-24562:Classic-Hor?wid=1215&fit=constrain',
         description: '',
         address: '' 
     },
     {
         name: 'Bengaluru',
-        cover:'https://static.businessworld.in/article/article_extra_large_image/1649214462_pnnlRG_Untitled_1_.jpg',
+        cover:'https://t3.ftcdn.net/jpg/03/50/71/36/360_F_350713686_hm35XdtrsSGuMIAhf4SRQIdxKFv1NtHv.jpg',
         description: '',
         address: '' 
     },
@@ -25,7 +25,7 @@ const placesData = [
     },
     {
         name: 'Jaipur',
-        cover:'https://www.jaipurstuff.com/wp-content/uploads/2022/08/First-Time-Visitors-Guide-to-Jaipur.jpg',
+        cover: 'https://www.archedu.org/images/jaipur1.jpg',
         description: '',
         address: '' 
     },
@@ -55,19 +55,19 @@ const placesData = [
     },
     {
         name: 'Ujjain',
-        cover:'https://img.republicworld.com/republic-prod/stories/promolarge/xhdpi/6resbbdwapin1b04_1665403667.jpeg',
+        cover:'https://static.toiimg.com/photo/msid-51630478,width-96,height-65.cms',
         description: '',
         address: '' 
     },
     {
         name: 'Sikkim',
-        cover:'https://www.bontravelindia.com/wp-content/uploads/2023/01/Sikkim-Tourism-Best-Places-to-Visit-in-Sikkim.jpg',
+        cover:'https://www.india.com/wp-content/uploads/2021/09/Sikkim-feature-1200.jpg',
         description: '',
         address: '' 
     },
     {
         name: 'Manali',
-        cover:'https://cliffhangersindia.com/wp-content/uploads/2023/02/july-in-manali.jpg',
+        cover:'https://www.tripsavvy.com/thmb/ZDRQXV-PiFDTFZu4x22mZkYuw9s=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-930881934-5ae56fe48023b90036464e72.jpg',
         description: '',
         address: '' 
     },
