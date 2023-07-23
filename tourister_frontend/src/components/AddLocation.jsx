@@ -4,10 +4,29 @@ import { useNavigate } from "react-router-dom";
 import * as Yup from 'yup';
 import Swal from 'sweetalert2';
 import placesData from "./placesData";
+import { useState } from "react";
 
 const AddLocation = () => {
 
-  const navigate=useNavigate();
+  // const navigate=useNavigate();
+
+  const [selFile, setSelFile] = useState('');
+
+  const uploadFile = (e) => {
+    if(!e.target.files[0]) return;
+    const file = e.target.files[0];
+    setSelFile(file.name);
+    const fd = new FormData();
+    fd.append("myfile", file);
+    fetch("http://localhost:5000/util/uploadfile", {
+      method: "POST",
+      body: fd,
+    }).then((res) => {
+      if (res.status === 200) {
+        console.log("file uploaded");
+      }
+    });
+  };
   
   const signupForm = useFormik({
     initialValues: {
@@ -18,6 +37,7 @@ const AddLocation = () => {
     },
 
     onSubmit: async (values) => {
+      values.image = selFile;
       console.log(values);
 
       const res = await fetch('http://localhost:5000/location/add',{
@@ -47,15 +67,16 @@ const AddLocation = () => {
 
   return (
     <div>
-      <div className="col-md-3 mx-auto">
-        <div className="card">
+      <div className="col-md-3 mx-auto d-flex align-items-center vh-100">
+        <div className="card w-100">
           <div className="card-body">
-            <h2 className="my-5 text-center">Signup Form</h2>
+            <h2 className="my-5 text-center">Add New Location</h2>
 
             <form onSubmit={signupForm.handleSubmit}>
 
               <label>Select Place</label>
               <select className="form-control" onChange={signupForm.handleChange} id="place" value={signupForm.values.place} >
+                <option value="">Select a Place</option>
                 {
                   placesData.map(place => (
                     <option value={place.name}>{place.name}</option>
@@ -72,10 +93,9 @@ const AddLocation = () => {
               <textarea className="form-control mb-3" onChange={signupForm.handleChange} value={signupForm.values.description} name="description" ></textarea>
 
               <label htmlFor="">Upload Image</label>
-              <span style={{color: 'red', fontSize: 15, marginLeft: 10}}>{signupForm.touched.password && signupForm.errors.password}</span>
-              <input className="form-control mb-3" type="file" />
+              <input className="form-control mb-3" type="file" onChange={uploadFile} />
 
-              <button type="submit" className="btn btn-primary mt-4">Login</button>
+              <button type="submit" className="btn btn-primary mt-4">Add Location</button>
             </form>
 
           </div>

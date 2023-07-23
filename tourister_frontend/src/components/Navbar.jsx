@@ -1,13 +1,42 @@
 import React from'react'
 import { NavLink } from 'react-router-dom';
+import { useUserContext } from '../UserContext';
 
 const Navbar =( ) => {
+  const { loggedin, logout } = useUserContext();
+
+  const showUserOptions = () => {
+    if (loggedin) {
+      return (
+        <ul className="navbar-nav ms-auto">
+          <button onClick={logout} className="btn btn-danger">
+            Logout
+          </button>
+        </ul>
+      );
+    } else {
+      return (
+        <ul className="navbar-nav ms-auto">
+          <li className="nav-item">
+            <NavLink className="nav-link" to="/signup">
+              Signup
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink className="nav-link" to="/login">
+              Login
+            </NavLink>
+          </li>
+        </ul>
+      );
+    }
+  };
  return(
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
-    <div className="container-fluid">
-      <a className="navbar-brand " href="#">
+    <div className="container">
+      <NavLink className="navbar-brand fw-bold" to="/">
         Tourister
-      </a>
+      </NavLink>
       <button
         className="navbar-toggler"
         type="button"
@@ -22,23 +51,13 @@ const Navbar =( ) => {
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
           <li className="nav-item">
-            <NavLink className="nav-link" to="/home">
+            <NavLink className="nav-link" to="/">
 
               Home
             </NavLink>
           </li>
 
-          <li className="nav-item">
-            <NavLink className="nav-link" to="/login">
-              Login page
-            </NavLink>
-          </li>
-
-          <li className="nav-item">
-            <NavLink className="nav-link" to="/singup">
-              SignUp page
-            </NavLink>
-          </li>
+        
 
           <li className="nav-item">
             <NavLink className="nav-link" to="/addlocation">
@@ -53,6 +72,7 @@ const Navbar =( ) => {
           </li>
 
         </ul>
+        {showUserOptions()}
         <form className="d-flex" role="search">
           <input
             className="form-control me-2"

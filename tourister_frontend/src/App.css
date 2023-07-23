@@ -1,38 +1,18 @@
-.App {
-  text-align: center;
+.home-header{
+  background-image: linear-gradient(0deg, #0000009d, #0000009d), url('https://www.tripsavvy.com/thmb/ZDRQXV-PiFDTFZu4x22mZkYuw9s=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-930881934-5ae56fe48023b90036464e72.jpg');
+  background-size: cover;
+  height: 70vh;
+  background-position: top;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header-title{
+  font-family: Dancing Script;
+  font-weight: bold;
+  font-size: 100px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-.App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.location-header{
+  background-size: cover;
+  height: 100vh;
+  background-position: top;
 }
