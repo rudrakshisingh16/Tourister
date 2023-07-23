@@ -69,7 +69,7 @@ router.get("/authenticate", (req,res)=> {
     Model.findOne(req.body)
     .then((result) => {
     if(result !== null){
-        
+            
     }
       res.json(result);
     })

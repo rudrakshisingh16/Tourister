@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 
 const FindLocation = () => {
 
-    const [locationList, setLocationList] = useState([]);
+  const [locationList, setLocationList] = useState([]);
 
     const {place} = useParams();
 
@@ -31,9 +31,7 @@ const FindLocation = () => {
                   </div>
                 </div>
               </div>
-        ))
-    }
-
+        ))}
   return (
     <div>
         <div className='container'>
@@ -42,7 +40,6 @@ const FindLocation = () => {
             </div>
         </div>
     </div>
-  )
-}
-
+  )}
+  
 export default FindLocation;

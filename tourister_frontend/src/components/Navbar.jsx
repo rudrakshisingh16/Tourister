@@ -52,8 +52,6 @@ const Navbar =( ) => {
             </NavLink>
           </li>
 
-
-      
         </ul>
         <form className="d-flex" role="search">
           <input
