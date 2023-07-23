@@ -66,7 +66,10 @@ const AddLocation = () => {
   });
 
   return (
-    <div>
+    <div style={{
+      backgroundImage: `url('https://nakedsecurity.sophos.com/wp-content/uploads/sites/2/2020/02/shutterstock_525154717-compressor.jpg')`,
+      backgroundSize: 'cover',
+    }}>
       <div className="col-md-3 mx-auto d-flex align-items-center vh-100">
         <div className="card w-100">
           <div className="card-body">

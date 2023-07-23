@@ -15,7 +15,10 @@ const Home = () => {
   }
 
   return (
-    <div >
+    <div style={{
+      backgroundImage: `url('https://img.freepik.com/premium-vector/gps-icon-with-glow-light-circuit-element-background_99087-63.jpg?w=900')`,
+      backgroundSize: 'cover',
+    }}>
       <header className="text-white home-header d-flex justify-content-center flex-column ">
         <div className="container">
           <h1 className="text-center display-1 fw-bold header-title">Tourister</h1>
