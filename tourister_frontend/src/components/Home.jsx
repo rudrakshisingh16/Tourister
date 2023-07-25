@@ -30,7 +30,7 @@ const Home = () => {
       </header>
 
       <div className="container">
-        <h1 className="text-center">Popular Locations</h1>
+        <h1 className="text-center text-white">Popular Locations</h1>
         <div className="row">
           {locationList.map((place) => (
             <div className="col-md-4 mb-4">

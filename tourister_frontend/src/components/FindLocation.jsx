@@ -22,7 +22,7 @@ const FindLocation = () => {
     };
 
     const displayLocations = () => {
-        if(locationList.length === 0 ) return <p className='text-center display-4'>No Locations Found at {place}</p>
+        if(locationList.length === 0 ) return <p className='text-center display-4 text-white'>No Locations Found at {place}</p>
         return locationList.map(location => (
             <div className='col-md-4 mb-4'>
                 <div className='card'>
